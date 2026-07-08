@@ -193,6 +193,18 @@ class GPTImage2TextToImage:
                         "default": "A photorealistic image of a red fox sitting in a snowy forest at dusk.",
                     },
                 ),
+                "seed": (
+                    "INT",
+                    {
+                        "default": 0,
+                        "min": 0,
+                        "max": 0xFFFFFFFFFFFFFFFF,
+                        "control_after_generate": True,
+                        "tooltip": "Not sent to the API — GPT-Image-2 has no seed control. "
+                                   "Changing this forces ComfyUI to re-run the node instead of "
+                                   "reusing a cached result on repeat/batch generations.",
+                    },
+                ),
             },
             "optional": {
                 "api_key": ("STRING", {"multiline": False, "default": ""}),
@@ -204,7 +216,7 @@ class GPTImage2TextToImage:
     FUNCTION = "run"
     CATEGORY = "🖼️ GPT-Image-2"
 
-    def run(self, prompt, api_key=""):
+    def run(self, prompt, seed=0, api_key=""):
         api_key = _load_api_key(api_key)
         payload = {"prompt": prompt}
         print("[GPTImage2 T2I] Submitting...")
@@ -240,6 +252,18 @@ class GPTImage2ImageToImage:
                         "default": "Transform this product image into a premium e-commerce poster style.",
                     },
                 ),
+                "seed": (
+                    "INT",
+                    {
+                        "default": 0,
+                        "min": 0,
+                        "max": 0xFFFFFFFFFFFFFFFF,
+                        "control_after_generate": True,
+                        "tooltip": "Not sent to the API — GPT-Image-2 has no seed control. "
+                                   "Changing this forces ComfyUI to re-run the node instead of "
+                                   "reusing a cached result on repeat/batch generations.",
+                    },
+                ),
             },
             "optional": {
                 "api_key": ("STRING", {"multiline": False, "default": ""}),
@@ -263,6 +287,7 @@ class GPTImage2ImageToImage:
     def run(
         self,
         prompt,
+        seed=0,
         api_key="",
         image_1=None,
         image_2=None,
