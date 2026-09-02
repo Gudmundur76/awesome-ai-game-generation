@@ -4,8 +4,15 @@
 
 AI game generation spans a wide spectrum: LLM-assisted asset and code scaffolding on one end, and full **world models** that generate playable, interactive worlds frame-by-frame with no traditional game engine at all on the other. This list tracks the whole spectrum — platforms, models, engine integrations, NPC/dialogue systems, asset generators, audio tools, research, and where to learn/discuss it.
 
+## Related Projects
+
+- [MuAPI](https://muapi.ai) — Unified API for image, video, audio, and 3D generation that can complement AI game-asset and world-building workflows.
+- [MuAPI model catalog](https://muapi.ai/docs/models) — Browse generative-media models for game art, cinematic clips, and audio.
+- [MuAPI playground](https://muapi.ai/playground) — Try image, video, and audio generation models in the browser.
+
 ## Contents
 
+- [Related Projects](#related-projects)
 - [World Models & Real-Time Generation](#world-models--real-time-generation)
 - [Prompt-to-Game Platforms](#prompt-to-game-platforms)
 - [AI 2D/3D Asset Generators](#ai-2d3d-asset-generators)
